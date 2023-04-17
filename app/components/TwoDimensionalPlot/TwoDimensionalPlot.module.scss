@@ -1,0 +1,34 @@
+$system-full-black: rgba(0, 0, 0, 1);
+$system-not-so-black: rgba(19, 19, 19, 1);
+$system-full-white: rgba(255, 255, 255, 1);
+$system-not-completed-grey: rgba(255, 255, 255, 0.1);
+
+$system-full-aqua-3: rgba(0, 255, 226, 1);
+$system-full-aqua-2: rgba(0, 150, 132, 1);
+$system-full-aqua-2: rgba(0, 75, 67, 1);
+$system-dark-petrol: rgba(0, 16, 24, 1);
+$system-not-so-dark-petrol: rgba(0, 32, 22, 1);
+$system-petrol: rgba(0, 64, 78, 1);
+
+$desktop-border-radius: 32px;
+$mobile-border-radius-big: 16px;
+$desktop-border-radius-small: 8px;
+
+.plotMainContainer {
+   width: 1000px;
+   height: 750px;
+   background-color: $system-not-so-black;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   border-radius: $desktop-border-radius;
+   overflow: scroll;
+
+   &:hover {
+      cursor: grab;
+   }
+
+   &::-webkit-scrollbar {
+   }
+}

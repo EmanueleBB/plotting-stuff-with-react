@@ -1,0 +1,16 @@
+$system-full-black: rgba(0, 0, 0, 1);
+$system-not-so-black: rgba(19, 19, 19, 1);
+$system-full-white: rgba(255, 255, 255, 1);
+$system-not-completed-grey: rgba(255, 255, 255, 0.1);
+
+$system-full-aqua-3: rgba(0, 255, 226, 1);
+$system-full-aqua-2: rgba(0, 150, 132, 1);
+$system-full-aqua-2: rgba(0, 75, 67, 1);
+$system-dark-petrol: rgba(0, 16, 24, 1);
+$system-not-so-dark-petrol: rgba(0, 32, 22, 1);
+$system-petrol: rgba(0, 64, 78, 1);
+
+body {
+   background-color: black;
+   color: white;
+}
