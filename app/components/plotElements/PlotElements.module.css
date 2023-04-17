@@ -5,7 +5,12 @@
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: rgb(92, 92, 92);
-  height: 1px;
+  height: 2px;
+  display: flex;
+  z-index: 2;
+  overflow: visible;
+  align-items: center;
+  justify-content: center;
 }
 
 .YAxys {
@@ -15,5 +20,13 @@
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: rgb(92, 92, 92);
-  width: 1px;
+  width: 2px;
+}
+
+.indicator {
+  width: 10px;
+  height: 10px;
+  z-index: 3;
+  border-radius: 50%;
+  background-color: white;
 }/*# sourceMappingURL=PlotElements.module.css.map */

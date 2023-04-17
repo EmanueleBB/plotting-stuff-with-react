@@ -30,5 +30,6 @@ $desktop-border-radius-small: 8px;
    }
 
    &::-webkit-scrollbar {
+      display: hidden;
    }
 }

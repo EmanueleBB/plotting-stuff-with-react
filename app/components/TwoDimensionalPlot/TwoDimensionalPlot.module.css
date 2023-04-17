@@ -11,4 +11,7 @@
 }
 .plotMainContainer:hover {
   cursor: grab;
+}
+.plotMainContainer::-webkit-scrollbar {
+  display: hidden;
 }/*# sourceMappingURL=TwoDimensionalPlot.module.css.map */
