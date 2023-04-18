@@ -1,38 +1,64 @@
-import { useCallback } from 'react';
-import { ElementFlags, JsxElement } from 'typescript';
+import { ReactNode, useEffect, useRef, useState } from 'react';
 import styles from './PlotElements.module.css'
 
-
 interface XAxysProps{
-	showIndicators?:boolean;
+   showIndicators?:boolean;
+   functionToPlot?:string;
 }
 
-const Xaxys:React.FC<XAxysProps> = ({showIndicators}) => {
+const Xaxys:React.FC<XAxysProps> = ({showIndicators,functionToPlot}) => {
 
-	const indicators:number[]=[1,2,3,4];
+   const [indicators, setIndicators] = useState<{i: number, distanceFromOrigin: number}[]>([]);
+   const xAxysRef = useRef<HTMLDivElement>(null);
+	let xZeroCoord:number;
+	let xAxysWidth:number;
 
-	const xAxys=document.getElementById('XAxys');
-	if(xAxys){
-		const xAxysWidth:number=xAxys.getBoundingClientRect().width;
-		const numberOfIndicators=xAxysWidth/45;
-		const xZeroCoord = xAxys.getBoundingClientRect().x+xAxysWidth/2;
-	}
-	
-	
+   useEffect(() => {
 
-  
+      if(xAxysRef.current){
 
- 	return (
-   	<div className={styles.XAxys} id='XAxys'>
-			{indicators.map((number,idx)=>{
-				return(
-					<div className={styles.indicator} key={idx}></div>
-				)
-			})}
+			xAxysWidth = xAxysRef.current.getBoundingClientRect().width;
+			const numberOfIndicators = 10;
+			xZeroCoord = xAxysRef.current.getBoundingClientRect().x + xAxysWidth / 2;
+
 			
+
+			let indicatorsArr = [];
+
+			for(let i = 0; i < numberOfIndicators; i++){
+				indicatorsArr.push({
+					i,
+					distanceFromOrigin: i * 100 +xAxysWidth/2
+				})
+			}
 			
+			setIndicators(indicatorsArr);
+			console.log({indicatorsArr});
+		}
+		
+   }, []);
+	
+	return (
+		<div className={styles.XAxys} ref={xAxysRef}>
+			{indicators.map((indicator,idx)=>(
+					<div 
+						className={styles.indicator}
+						style={{left:`${indicator.distanceFromOrigin}px`}}
+						key={idx}
+					>
+					</div>
+			))}
+			{indicators.map((indicator,idx)=>(
+					idx!=0 && <div 
+						className={styles.indicator}
+						style={{left:`${indicator.distanceFromOrigin-idx*200}px`}}
+						key={idx+10}
+					>
+					</div>
+			))}
+
 		</div>
-  	)
+	)
 }
 
 export default Xaxys

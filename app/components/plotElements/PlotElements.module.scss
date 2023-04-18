@@ -22,7 +22,7 @@ $desktop-border-radius-small: 8px;
    left: 50%;
    transform: translate(-50%, -50%);
    background-color: $system-dark-mode-axys-color;
-   height: 2px;
+   height: 3px;
    display: flex;
    z-index: 2;
    overflow: visible;
@@ -36,14 +36,16 @@ $desktop-border-radius-small: 8px;
    left: 50%;
    transform: translate(-50%, -50%);
    background-color: $system-dark-mode-axys-color;
-   width: 2px;
+   width: 3px;
 }
 
 .indicator {
-   width: 10px;
-   height: 10px;
+   width: 8px;
+   height: 8px;
+   border-radius: 4px;
    z-index: 3;
    border-radius: 50%;
-
-   background-color: white;
+   position: absolute;
+   transform: translateX(-50%);
+   background-color: $system-dark-mode-axys-color;
 }
